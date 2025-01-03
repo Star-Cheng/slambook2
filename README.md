@@ -1,31 +1,71 @@
-## Slambook2
-![titlepage](./figures/title.png)
+# install enviroement
+```shell
+bash install.sh
+```
+## 非slambook环境配置start
+### git clone
+```shell
+cd ~/gym/download/slam
+# git clone https://github.com/rmsalinas/DBow3.git
+# git clone https://github.com/stevenlovegrove/Pangolin.git
+# git clone https://github.com/strasdat/Sophus.git
+# git clone https://github.com/ceres-solver/ceres-solver.git
+# git clone https://github.com/RainerKuemmerle/g2o.git
+# git clone https://github.com/google/googletest.git
+```
+### Pangolin install
+```shell
+# https://blog.csdn.net/ainitutu/article/details/107084691
+cd Pangolin
+mkdir build
+cd build
+cmake ..
+make -j16
+make install
+```
+### Sophus install
+```shell
+# wget https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.gz
+# tar -zxvf eigen-3.4.0.tar.gz
+# 修改CMakeLists.txt中的cmake版本和Eigen版本
+cd Sophus
+mkdir build
+cd build
+cmake ..
+make install
+```
+### Ceres-solver install
 
-Welcome to Slambook 2nd Edition! This is the codebase of our book. Here are some relavant links if you need them: 
-- [Our book at jd.com](https://item.jd.com/12666058.html)
-- [Our book at douban.com](https://book.douban.com/subject/27028215/) (I'll be happy to get a score at douban)
-- [code of slambook version 1](https://github.com/gaoxiang12/slambook)
-- [slambook in English](https://github.com/gaoxiang12/slambook-en) (Still on going)
-
-Email me if you have any questions: gao.xiang.thu at gmail dot com. Or send a issue at github if your question is about the code.
-
-Errata will be updated at this code base.
-
-Hope you like this book.
-
-BaiduYun backup link in case your github is very slow (common in China): [here](https://pan.baidu.com/s/1XQwpnDb3BOvxXZhL-03p3w)
-
----
-## 视觉SLAM十四讲：从理论到实践 第二版
-欢迎来到视觉SLAM十四讲：从理论到实践。这里存放本书对应的代码文件。以下是一些可能对你有用的链接：
-- [京东书籍链接](https://item.jd.com/12666058.html)
-- [第一版书代码](https://github.com/gaoxiang12/slambook)
-- [英文版代码](https://github.com/gaoxiang12/slambook-en) (正在翻译中)
-
-如果您对书籍内容有疑问，请给我发送邮件。如果对代码有疑问，请点击上方的issue链接新建issues。我会不定期查看和回复（抱歉我可能无法回复所有问题和邮件）。
-
-勘误表会更新到代码库中。
-
-希望您喜欢本书。
-
-本代码的百度云备份（如果您的github速度非常慢）[下载链接](https://pan.baidu.com/s/1XQwpnDb3BOvxXZhL-03p3w).
+```shell
+# easy install
+apt install libceres-dev -y
+apt-get install libceres-dev -y
+# complex install
+# https://blog.csdn.net/little_white138/article/details/142443296
+apt-get install -y libgoogle-glog-dev libgflags-dev protobuf-compiler libprotobuf-dev
+apt-get install  liblapack-dev libsuitesparse-dev libcxsparse3 libgtest-dev -y
+cd ~/gym/download/slam
+git clone https://github.com/abseil/abseil-cpp.git
+cd abseil-cpp
+cmake -DBUILD_SHARED_LIBS=ON -L CMakeLists.txt && make -j16
+make install
+cd ..
+wget http://ceres-solver.org/ceres-solver-2.0.0.tar.gz
+tar -zxvf ceres-solver-2.0.0.tar.gz
+cd ceres-solver
+mkdir bd
+cd bd
+cmake ..
+make -j16
+make install
+```
+### G2o install
+```shell
+cd ~/gym/download/slam
+git clone https://github.com/RainerKuemmerle/g2o.git
+cd g2o
+mkdir build && cd build
+cmake ..
+make -j16
+make install
+```
