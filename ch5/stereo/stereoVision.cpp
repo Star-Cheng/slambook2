@@ -10,7 +10,9 @@ using namespace Eigen;
 
 // 文件路径
 string left_file = "/root/gym/code/slam/slambook2/ch5/stereo/left.png";
+// string left_file = "/root/gym/code/slam/slambook2/ch5/stereo/left_image_0.png";
 string right_file = "/root/gym/code/slam/slambook2/ch5/stereo/right.png";
+// string right_file = "/root/gym/code/slam/slambook2/ch5/stereo/right_image_0.png";
 
 // 在pangolin中画图，已写好，无需调整
 void showPointCloud(
@@ -19,9 +21,11 @@ void showPointCloud(
 int main(int argc, char **argv) {
 
     // 内参
-    double fx = 718.856, fy = 718.856, cx = 607.1928, cy = 185.2157;
+    double fx = 718.856, fy = 718.856, cx = 607.1928, cy = 185.2157;  // left.png
+    // double fx = 285.338, fy = 285.19, cx = 305.642, cy = 203.113;  // left_image_0.png
     // 基线
-    double b = 0.573;
+    double b = 0.573;  // left.png
+    // double b = 0.00586;  // left_image_0.png
 
     // 读取图像
     cv::Mat left = cv::imread(left_file, 0);

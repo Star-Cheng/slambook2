@@ -5,4 +5,6 @@
 # apt install gdb -y
 # apt install libepoxy-dev -y
 # 非slambook环境配置end
+apt update
+apt upgrade -y
 apt install gdb -y
